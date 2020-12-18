@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div  class="flask_main">
+    <!-- <h1>Upload the MRI Scan</h1> -->
+    <div class="flask_container">
+
+            <form action="/upload-image" method="POST" enctype="multipart/form-data">
+                <div class="flask_form">
+                    <label class="flask_label">Upload the MRI Scan</label>
+                    <div class="flask_custom">
+                        <input type="file" class="flask_file_input" name="image" id="image">
+                        <label class="custom-file-label" for="image">Select image...</label>
+                    </div>
+                </div>
+            <button type="submit" class="flask_btn">Upload</button>
+            </form>
+    </div>
+</div>
+</body>
+</html>

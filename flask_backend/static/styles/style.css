@@ -1,0 +1,17 @@
+.flask_container{
+    padding: 10rem;
+}
+
+.flask_label{
+    
+    font-size: 2rem;
+}
+
+.flask_file_input{
+    margin: 3rem;
+}
+
+.custom-file-label{
+    margin: 3rem;
+    font-size: 1.5rem;
+}
