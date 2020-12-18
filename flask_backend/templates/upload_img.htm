@@ -3,12 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/styles/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alzheimer's Disease</title>
 </head>
-<body>
-<div  class="flask_main">
-    <!-- <h1>Upload the MRI Scan</h1> -->
+
+        <!-- Site Icons -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename = 'images/favicon.ico') }}" type="image/x-icon">
+        <link rel="apple-touch-icon" href="{{ url_for('static', filename = 'images/apple-touch-icon.png') }}">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+        <!-- Pogo Slider CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/pogo-slider.min.css') }}">
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">    
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.css') }}">
+
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <header class="top-header">
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="index.html"><img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="#home">Upload MRI Scan</a></li>
+                        <li><a class="nav-link" href="/">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+
+<!-- <div  class="flask_main">
+    <h1>Upload the MRI Scan</h1> 
     <div class="flask_container">
 
             <form action="/upload-image" method="POST" enctype="multipart/form-data">
@@ -22,6 +57,47 @@
             <button type="submit" class="flask_btn">Upload</button>
             </form>
     </div>
+</div> -->
+<div class="container" style="margin: auto;">
+    <h1 style="margin: auto; font-weight: 600; text-align: center;">Upload MRI Scan</h1>
+    <div style="width: 85%; margin: auto;">
+        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+            <label class="form-label" for="image">Choose Scanned Image</label>
+            <input type="file" class="form-control" id="image" />
+            <button id="singlebutton" name="singlebutton" class="new-btn-d br-2" style="background-color: grey;margin: auto;" type="submit">Upload MRI Scan</button>
+        </form>
+    </div>
 </div>
+
+<!-- Start Footer -->
+<footer class="footer-box" style="position: absolute; bottom: 0;width: 100%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Health Lab</a> Design By : <a href="https://html.design/">html design</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+<script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+<!-- ALL PLUGINS -->
+<script src="{{ url_for('static', filename = 'js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/jquery.pogo-slider.min.js') }}"></script> 
+<script src="{{ url_for('static', filename = 'js/slider-index.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/TweenMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/form-validator.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/contact-form-script.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/isotope.min.js') }}"></script>	
+<script src="{{ url_for('static', filename = 'js/images-loded.min.js') }}"></script>	
+<script src="{{ url_for('static', filename = 'js/custom.js') }}"></script>
 </body>
 </html>
