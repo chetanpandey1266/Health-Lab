@@ -71,10 +71,10 @@
 
 {% if predicted==True %}
 <div class="container">
-    <div style="margin: auto;">
-        <img src="{{ imgData }}" alt="result" style="width: 100%;">
+    <div style="margin: auto; padding: 2rem">
+        <img src="data:image/jpeg;base64,{{imgData}}" alt="result" style="width: 60%;">
         <p style="font-size: 1.5rem;">
-            <span style="font-size: 2rem; font-weight: 600;">Text</span>{{ supplied_text }}
+            <span style="font-size: 2rem; font-weight: 600;">Accuracy: </span>{{ supplied_text }}
         </p>
     </div>
 </div>

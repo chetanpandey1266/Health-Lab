@@ -52,7 +52,7 @@ class Api:
             if ofp:
                 save_path = os.path.join(ofp,save_path)
                 
-            self._save_image(output, save_path)
+            self._save_image(file, output, save_path)
             print(f'Output Image Saved At {save_path}')
 
         elif folder != None:
@@ -93,7 +93,7 @@ class Api:
     def _save_image(self, file, image, path):
         """Save the image to storage specified by path"""
         image = Image.fromarray(np.uint8(image), 'L')
-        image = 0.6*file + image*0.2
+        # image = 0.6*file + image*0.2
         image.save(path)
 
     def _get_file(self, file_name):
