@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, render_template, redirect
 import os
-import subprocess
+import subprocess, base64
 
 
 app = Flask(__name__)
@@ -28,17 +28,19 @@ def upload_img():
             image = request.files["image"]
             if(image.filename == ''):
                 return "NO FILE UPLOADED"
-            filename =image.filename
+            filename =image.filename 
             ext = filename.rsplit(".", 1)[1]
             if ext.upper() in app.config["ALLOWED_IMAGE_EXTENSIONS"]:
                 image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
                 os.chdir('ml_backend')
                 subprocess.Popen(f'python3 api.py --file ../input_imgs/{filename}', shell=True)
                 os.chdir('../')
+                out_img64 = base64.b64encode(out_raw.read())
+                return render_template('upload_img.htm', predicted = True, imgData = out_img64, supplied_text = 'Hello')
             else:
                 return "NON SUPPORTED FILE TYPE"
             return redirect(request.url)
-    return render_template('upload_img.htm')
+    return render_template('upload_img.htm', predicted = False)
 
 if __name__ == '__main__':
     app.run(debug=True)

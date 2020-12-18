@@ -69,7 +69,16 @@
     </div>
 </div>
 
-
+{% if predicted==True %}
+<div class="container">
+    <div style="margin: auto;">
+        <img src="{{ imgData }}" alt="result" style="width: 100%;">
+        <p style="font-size: 1.5rem;">
+            <span style="font-size: 2rem; font-weight: 600;">Text</span>{{ supplied_text }}
+        </p>
+    </div>
+</div>
+{% endif %}
 
 <a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
 
