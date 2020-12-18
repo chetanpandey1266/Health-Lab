@@ -1,5 +1,9 @@
 .flask_container{
-    padding: 10rem;
+    width: 75%;
+    margin: 25px auto;
+    border: 1px solid rgba(200, 20 , 20 , 35);
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .flask_label{
