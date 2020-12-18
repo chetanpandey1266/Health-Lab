@@ -10,7 +10,7 @@ app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG"]
 
 @app.route('/')
 def home():
-    return redirect('/upload-image')
+    return render_template('index.html')
 
 @app.route('/<link>')
 def notfound(link):
@@ -36,4 +36,8 @@ def upload_img():
                 return "NON SUPPORTED FILE TYPE"
             return redirect(request.url)
     return render_template('upload_img.htm')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
