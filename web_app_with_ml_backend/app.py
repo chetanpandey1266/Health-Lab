@@ -7,7 +7,7 @@ from classification.classification import predict
 
 app = Flask(__name__)
 
-app.config["IMAGE_UPLOADS"] = "/home/chetan/CyberLabs/alzheimer/new/alzheimer/final/input_imgs"
+app.config["IMAGE_UPLOADS"] = "/home/chetan/CyberLabs/alzheimer/alzheimer/web_app_with_ml_backend/input_imgs"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG"]
 
 
