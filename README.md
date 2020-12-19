@@ -51,7 +51,7 @@ Fork this repository.
 Then move to the desired directory in your PC and type in the terminal
 
 ```shell
-git clone https://github.com/chetanpandey1266/alzheimer.git
+git clone https://github.com/chetanpandey1266/FallFest-VWXYZ.git
 
 cd web_app_with_ml_backend
 
