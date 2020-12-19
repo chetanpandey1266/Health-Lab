@@ -20,8 +20,9 @@ Team: VWXYZ
 
 We propose to implement a deep-learning framework that will segment the affected part of the brain in the MRI scans along with predicting severity of the alzheimer's disease.
 
-We are going to deploy the model with simple interactive user interface - Medidoc on web platform.
+We are going to deploy the model with simple interactive user interface - **Health Lab** on web platform.
 
+Our [presentation](https://docs.google.com/presentation/d/1yVL8I-bt9WNGl4_27r4kq4FxgDIy60_ke0O30EIWrjg/edit#slide=id.gb1f8aa6de7_5_1810) and [demo_video](./demo/site_demo-2020-12-19_11.03.47.mp4)
 
 ### Training
 
