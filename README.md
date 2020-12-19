@@ -34,6 +34,28 @@ We are going to deploy the model with simple interactive user interface - Medido
 
 ### Installation
 
+Fork this repository.
+
+Then move to the desired directory in your PC and type in the terminal
+
+```shell
+git clone https://github.com/chetanpandey1266/alzheimer.git
+
+cd web_app_with_ml_backend
+
+pip install -r requirements.txt
+```
+
+Now your webapp is ready to run on your localhost😄
+
+To run the web app
+
+```shell
+
+python app.py
+```
+
+This will run your site on localhost
 
 
 ### How_to_Use
