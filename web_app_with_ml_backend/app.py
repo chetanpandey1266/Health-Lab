@@ -9,15 +9,16 @@ app = Flask(__name__)
 
 app.config["IMAGE_UPLOADS"] = "/home/chetan/CyberLabs/alzheimer/alzheimer/web_app_with_ml_backend/input_imgs"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG"]
+app.config["IMAGE_HEATMAP"] = "/home/chetan/CyberLabs/alzheimer/alzheimer/web_app_with_ml_backend/heat_map"
 
 
 def image_2_heatmap(img_path, mask_path):
     print("img_path", img_path)
     print("mask_path", mask_path)
     img = cv2.imread(str(img_path), 0)
-    img = cv2.resize(img, (208, 176))
+    img = cv2.resize(img, (208, 176), interpolation = cv2.INTER_CUBIC)
     heatmap=  cv2.imread(str(mask_path), 0)
-    heatmap = cv2.resize(heatmap, (208, 176))
+    heatmap = cv2.resize(heatmap, (208, 176), interpolation = cv2.INTER_CUBIC)
     img = cv2.applyColorMap(img, cv2.COLORMAP_BONE)
     heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_PINK)
     image = 0.6*img+0.4*heatmap
@@ -50,11 +51,10 @@ def upload_img():
                 os.chdir('ml_backend')
                 subprocess.Popen(f'python3 api.py --file ../input_imgs/{filename}', shell=True)
                 os.chdir('../') 
-                # img = image_2_heatmap(os.getcwd()+f'/input_imgs/{name}.{ext}', os.getcwd()+f'/output_imgs/{name}_predicted.{ext}')
-                # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  
-                # img = Image.fromarray(img)
-                # img.save(os.getcwd()+'/heatmap/'+f'{name}_map.{ext}')
-                with open(f'output_imgs/{name}_predicted.{ext}', 'rb') as out_raw:
+                img = image_2_heatmap(f'input_imgs/{name}.{ext}', f'output_imgs/{name}_predicted.{ext}')
+                print(os.getcwd()+f'heatmap/{name}_map.{ext}')
+                cv2.imwrite(os.path.join(app.config["IMAGE_HEATMAP"], f'{name}_map.{ext}'), img)
+                with open(f'heat_map/{name}_map.{ext}', 'rb') as out_raw:
                     out_img64 = base64.b64encode(out_raw.read())
                 out_img64 = out_img64.decode("utf-8")
                 prediction = predict(f'input_imgs/{filename}', 'classification/saved_weight/current_checkpoint.pt')
