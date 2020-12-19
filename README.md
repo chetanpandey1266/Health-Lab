@@ -1,5 +1,11 @@
 # Health Lab
 
+![Health Lab](./readme/first_look.gif)
+
+This is our submission for Fall Fest 2020 
+
+Team: VWXYZ
+
 ## Table of Contents
 
 
@@ -57,8 +63,10 @@ python app.py
 
 This will run your site on localhost
 
-
 ### How_to_Use
+
+
+For demo refer this [video](./demo/site_demo-2020-12-19_11.03.47.mp4)
 
 
 
