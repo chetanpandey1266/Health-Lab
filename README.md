@@ -7,9 +7,6 @@
 -->
 ![Health Lab](./readme/first_look.gif)
 
-This is our submission for Fall Fest 2020 
-
-Team: VWXYZ
 
 ## Table of Contents
 
